@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMPLE TEXT</title>
+    <script type="text/javascript">
+       function fontSize(){
+        var font= document.getElementById("font").value;
+        var sample = document.getElementById("smplTxt");
+         sample.style.fontSize= `${font}px`;
+       }
+       function colorChange(){
+        var color= document.getElementById("colorPicker").value;
+        document.getElementById("smplTxt").style.color= color;
+       }
+       function styleChange(){
+        var style=document.getElementById("styleSelect").value;
+         document.getElementById("smplTxt").style.fontStyle = style;
+         document.getElementById("smplTxt").style.fontWeight= style;
+       }
+       function btnLeft(){
+         document.getElementById("smplTxt").style.textAlign= "left";
+       }
+       function btnCenter(){
+        document.getElementById("smplTxt").style.textAlign= "center";
+       }
+       function btnRight(){
+        document.getElementById("smplTxt").style.textAlign = "right";
+       }
+    </script>
+</head>
+<body class="container-fluid" >
+    <div class="container" style="display: flex; justify-content: space-around; margin: 100px;" >
+    <div class="card1" style="border: solid; border-radius: 70px; background: rgb(253, 253, 72);  width: 170px; font-family:cursive; text-align: center; height:150px; ">
+        <div class="card-header" style="padding: 25px; color: rgb(36, 16, 148); font-weight: bold;" >FONT SIZE</div>
+        <div class="card-body"><input type="range" max="50" min="1" value="1" id="font" onchange="fontSize()" ></div>
+    </div>
+    <div class="card2" style="border: solid; border-radius: 70px;  width: 170px; background: thistle; font-family:cursive; text-align: center; height:150px;">
+        <div class="card-header" style="padding: 25px; color: rgb(255, 38, 0); ">COLOR PICKER</div>
+        <div class="card-body" ><input type="color" id="colorPicker" onchange="colorChange()"></div>
+    </div>
+    <div class="card3" style="border: solid; border-radius: 70px; width: 170px; background: rgb(235, 147, 181); font-family:cursive; text-align: center; height:150px;">
+        <div class="card-header" style="margin: 30px; color: rgb(70, 6, 49)">STYLE</div>
+        <div class="card-body" >
+            <select id="styleSelect" onclick="styleChange()">
+                <option>STYLE</option>
+            <option>BOLD</option>
+            <option>ITALIC</option>
+        </select> 
+        </div>
+    </div>
+        <div class="card4" style="border: solid; border-radius: 70px; width: 170px; background: rgb(126, 189, 226); font-family:cursive; text-align: center; height:150px;" >
+            <div class="card-header" style="margin:20px; color: rgb(124, 39, 39);">ALIGNMENT</div>
+            <div class="card-body">
+                <button type="button" onclick="btnLeft()" id="left">LEFT</button>
+                <button type="button" onclick="btnCenter()" id="center">CENTER</button>
+                <button type="button" onclick="btnRight()" id="right">RIGHT</button>
+            </div>
+        </div>
+</div>
+<div class="mt-5" id="smplTxt">
+  SAMPLE TEXT 
+</div>
+</body>
+</html>

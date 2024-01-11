@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INOX Movies</title>
+  <link rel="stylesheet"  href="../node_modules/bootstrap/dist/css/bootstrap.css">
+ <link rel="stylesheet"  href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+ <script type="text/javascript">
+  
+   function booking()
+   {
+    document.getElementById("bookingContainer").style.display="block";
+    document.getElementById("lblmovies").innerHTML=document.getElementById("lstmovies").value;
+    document.getElementById("lblcinema").innerHTML=document.getElementById("lstcinema").value;
+    document.getElementById("lbldate").innerHTML=document.getElementById("lstdate").value;
+    document.getElementById("lbltime").innerHTML=document.getElementById("lsttime").value;
+    document.getElementById("lblseats").innerHTML=document.getElementById("lstseats").value;   
+   
+   movie = document.getElementById("lstmovies").value;
+   pic= document.getElementById("pic");
+   screen="";
+
+     if (movie =="Mad"){
+      pic.src= "../public/images/mad.jpeg";
+      screen= "Screen-1";
+     } else if (movie=="Leo") {
+      pic.src="../public/images/leo.jpeg";
+      screen= "Screen-2";
+     }else{
+      pic.src="../public/images/tejas.jpg";
+      screen="Screen-3";
+     }
+     document.getElementById("lblscreen").innerHTML = screen;
+
+    }
+ </script>
+</head>
+<body class="container-fluid">
+<button class="btn btn-danger w-25 mt-3" data-bs-target="#booking" data-bs-toggle="modal">Quick Booking</button>
+  <div class="modal fade " id="booking">
+  <div class="modal-dialog modal-fullscreen">
+   <div class="modal-content">
+  <div class="modal-header"> <h3>QuickBooking</h3>
+  <button class="btn btn-close" data-bs-dismiss="modal"></button>
+  </div>
+  <div class="modal-body ">
+    <nav class="d-flex bg-dark text-light justify-content-around p-2">
+      <div>
+       <select class="form-select" id="lstmovies">
+        <option>Select movies </option>
+        <option>Mad</option>
+        <option>Leo</option>
+        <option>Tejas</option>
+       </select>
+      </div>
+      <div>
+       <select class="form-select" id="lstcinema">
+        <option>Select Cinema</option>
+        <option>INOX Maheshwari Parameshwari</option>
+        <option> INOX Sattva</option>
+        <option> INOX GSM mall</option>
+       </select>
+      </div>
+      <div>
+       <select class="form-select" id="lstdate">
+        <option>Select date</option>
+        <option>Monday,Oct 30</option>
+        <option>Tuesday,Oct 31</option>
+        <option>Wednesday,Nov 1</option>
+       </select>
+      </div>
+      <div>
+       <select class="form-select" id="lsttime">
+       <option>Select timings</option>
+       <option>11:00AM</option>
+       <option>2:00PM</option>
+       <option>6:00PM</option>
+       <option>9:00PM</option>
+      </select>
+    </div>
+    <div>
+      <select class="form-select" id="lstseats">
+        <option>Select Seats</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+    <div>
+      <button class="btn btn-danger" onclick="booking()" data-bs-dismiss="modal" >Book Now</button>
+    </div>
+    </nav>
+  </div>
+   </div>
+  </div>
+  </div>
+  <div class=" w-25" id="bookingContainer" style="display: none;">
+    <h3 class="bg-black text-white mt-3 p-2">BOOKING SUMMARY</h3>
+  <dl class="row">
+    <img id="pic" width="100%" height="200">
+    <dt class="col-3">Movies</dt>
+    <dd class="col-7" id="lblmovies"></dd>
+    <dt class="col-3">place</dt>
+    <dd class="col-7" id="lblcinema"></dd>
+    <dt class="col-3">Date</dt>
+    <dd class="col-7" id="lbldate"></dd>
+    <dt class="col-3">Time</dt>
+    <dd class="col-7" id="lbltime"></dd>
+    <dt class="col-3">Screen</dt>
+    <dd class="col-7" id="lblscreen"></dd> 
+    <dt class="col-3">Seats </dt>
+    <dd class="col-7" id="lblseats"></dd>
+  </dl>
+  <button class="btn btn-link" data-bs-target="#booking" data-bs-toggle="modal">Modify Booking</button>
+  </div>
+
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

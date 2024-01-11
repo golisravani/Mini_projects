@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculation</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript"> 
+    function submitClick(){
+        var num1= parseFloat(document.getElementById("number1").value);
+        var num2= parseFloat(document.getElementById("number2").value);
+        var select= document.getElementById("selectOpt").value;
+        var result= document.getElementById("Result");
+        var answer= "";
+        switch(select)
+        {
+            case "Addition":
+            answer = num1 + num2;
+            result.innerHTML = `Result:${ answer}`;
+            break;
+            case "Subtraction":
+            answer = num1 - num2;
+            result.innerHTML = `Result:${answer}`;
+            break;
+            case "Multiplication":
+            answer = num1*num2;
+            result.innerHTML = `Result:${ answer}`;
+            break; 
+            case "Division":
+            answer = num1/num2;
+            result.innerHTML = `Result:${ answer}`;
+            break;   
+            default:
+           result.innerHTML=`please select one option`;
+        }
+    }
+    </script>
+</head>
+<body class="container-fluid mt-5" style="  width: 500px;background-color: rgb(166, 189, 190);">
+    <div class="card" style="display: flex; justify-content: center; height: 400px;  ">
+        <div class="card-header" style="text-align: center; background-color: rgb(53, 104, 128); color: white;" > <h1>Simple calculations</h1></div>
+        <div class="card-body" style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" >
+            <div style="padding: 20px;" >NUMBER-1
+                <input type="text" placeholder="enter a number" id="number1"></div>
+            <div style="padding: 20px;">NUMBER-2
+            <input type="text" placeholder="enter a number" id="number2"></div>
+            <div style="padding: 20px;">OPERATIONS
+            <select id="selectOpt">
+                <option> select </option>
+               <option value="Addition">Addition</option>
+               <option value="Subtraction">Subtraction</option>
+               <option value="Multiplication">Multipliction</option>
+               <option value="Division">Division</option>
+            </select></div>
+            <button type="button" id="submit" onclick="submitClick()" class="btn btn-info m-3">SUBMIT</button>
+        <div >
+            <h4 class="p-2" id="Result"></h4> 
+        </div>
+    </div>
+    </div>
+ 
+</body>
+</html>
