@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>BMI Calculator</title>
+   <link rel="stylesheet" href="..//node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="..//node_modules/bootstrap-icons/font/bootstrap-icons.css">
+ <script type="text/javascript">
+   function calculateClick() {
+        var optMale = document.getElementById("optMale");
+        var optFemale= document.getElementById("optFemale");
+        var  height= parseFloat(document.getElementById("height").value);
+        var  weight= parseFloat(document.getElementById("weight").value);
+        var result= document.getElementById("BMI");
+        var v =document.getElementById("you");
+        if(optMale.checked)
+        {
+           var BMI= weight/ Math.pow(height/100,2);
+           result.innerText= "Your BMI "+  BMI.toFixed(2);
+           
+           if ( BMI<=18.4){ 
+               v.style.marginLeft="60px";
+           } else if (BMI>= 18.5 && BMI <= 24.9){
+            v.style.marginLeft="210px";
+           }else if((BMI >= 25.0 && BMI <= 29.9)){
+            v.style.marginLeft="390px";
+         }else if((BMI >=30.0 )) {
+            v.style.marginLeft="530px";
+           }
+         }
+
+           else if(optFemale.checked){
+           var BMI= weight/ Math.pow(height/100,2);
+           result.innerText= "your BMI"+ BMI.toFixed(2);
+           
+           if ( BMI<=18.4){ 
+            v.style.marginLeft="60px";
+         } else if (BMI>= 18.5 && BMI <= 24.9){
+            v.style.marginLeft="210px";
+         }else if((BMI >= 25.0 && BMI <= 29.9)){
+            v.style.marginLeft="390px";
+         }else if((BMI >=30.0 )) {
+            v.style.marginLeft="530px";
+         }
+          }
+   }
+ </script>
+</head>
+<body class="container-fluid mt-5" style="width: 100vh;  height: 100vh;" >
+   <div class="container" style=" border: solid black; border-radius: 10px;background-color: rgb(32, 23, 23);  color:white">
+      <h3 style="font-family:serif; background: rgb(178, 193, 194); text-align: center; color: black;">BMI CALCULATOR</h3>
+      <div class="ms-3" >
+      <input type="radio"  checked id="optMale" class="form-check-input" name="Gender"><label for="checkmale">Male</label>
+      <input type="radio"  id="optFemale" class="form-check-input" name="Gender"><label for="checkfemale">Female</label>
+      </div>
+      <div class="container " style="display: flex; margin-left: 10px; padding: 10px; ">
+      <div style="margin-right: 10px;">
+           Age(1 year or above)*
+           <input type="number" id="age"  maxlength="3" placeholder="years" required>   
+      </div>
+      <div class="hght me-2" > Height*
+            <input type="number" id="height" maxlength="3" placeholder="in cms" required></div>
+      <div class="wght " >Weight*
+            <input type="number" id="weight" maxlength="3" placeholder="kg" required></div>
+         </div>
+         <div><button type="button" onclick="calculateClick()" class="btn btn-dark" style="margin-left: 250px; margin-top:30px; margin-bottom: 20px;">Calculate</button>
+         </div>
+      <div id="BMI" style="text-align: center;"><h4>Your BMI</h4>  </div>
+      <div class="container mt-5" style="border: solid rgb(86, 92, 146)  ; border-radius: 30px;">
+         <div style="padding: 10px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;"><h4> Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.</h4></div>
+         <div class="progress w-100"  >
+            <div class="progress-bar"style="width: 25%; background-color: yellow ; color: black;">Under Weight</div>
+            <div class="progress-bar ms-1" style="width: 25%; background-color: lightblue ; color: black;"> Normal  </div>
+            <div class="progress-bar ms-1" style="width: 25%; background-color: orangered; color: black;">Over Weight</div>
+            <div class="progress-bar ms-1" style="width: 25%; background-color: red ; color: black ;">Obese</div>      
+         </div>  
+         <div id="you" style="margin-left: 30px;">
+         <span  style=" margin-bottom: 30px;  " class="bi bi-caret-down-fill"> </span>
+         <div>You</div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>
