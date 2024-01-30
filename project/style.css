@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0px;
+}
+
+.hero-section{
+    background-image: url("../public/images/hotel.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0,0.5);
+    position: relative;
+}
+.hero-text{
+    text-align: center;
+    padding: 230px;
+    color: white;
+    position: absolute;
+    font-family: 'Playfair Display', serif;
+}
+.abt{
+    float: left;
+    width: 50%;
+    text-align: center;
+    margin: 10px 0px;
+    text-align: center;
+}
+.about-section >h2{
+ text-align: center;
+ margin: 10px 0px;
+ text-decoration: underline;
+}
+.amenities{
+text-align: center;
+}
+.amenities ul{
+    display: inline-block;
+    text-align: left;
+    margin-top: 10px ;
+}
