@@ -1,0 +1,54 @@
+ h1 {
+display: flex;
+justify-content: center;
+margin:30px ;
+font-size: 50px;
+font-family: "Protest Riot", sans-serif;
+}
+  
+
+body{
+      background: linear-gradient( to left , #abc4ff ,  #faf0ca ,#c1d3fe   ) ;
+}
+.container{
+    border: 2px solid; 
+    border-radius: 50px;
+    margin-top: 20px;
+    height: 500px;    
+    width: 500px;
+    box-shadow: 12px 12px 2px 15px #55828b;  
+}
+.display input {
+  margin-top: 30px;
+  background: transparent;
+  outline: none;
+  border: none;
+  margin-right: 30px;
+   width: 450px;
+   text-align: right;
+   font-size: 30px;
+}
+.buttons{
+font-size: 20px;
+display: flex;
+padding: 10px;
+background: transparent;
+border-radius: 5px;
+}
+
+button{
+    margin: 10px;
+    width: 80px;
+    height: 80px;
+    background: transparent;
+    border-radius: 50%;
+    border: none;
+    box-shadow: none; 
+    transition: box-shadow 0.2s ease-in-out;
+    font-size: 30px;
+}
+button:hover{
+    background-color: #33658a;
+    box-shadow: 2px 2px 8px rgba(5, 0, 0, 0.3); /* Shadow effect on hover */
+    
+}
